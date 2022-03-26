@@ -9,9 +9,7 @@
 ### metaplex install
 ```
 git clone -b v1.1.1 https://github.com/metaplex-foundation/metaplex.git
-```
 yarn install --cwd ~/metaplex/js/
-```
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts --version
 ```
 
@@ -20,16 +18,18 @@ And then clone this repo
 
 ```
 REACT_APP_CANDY_MACHINE_ID=`<Your Candy Machine Public Key>`
-```
 REACT_APP_SOLANA_NETWORK=devnet
-```
 REACT_APP_SOLANA_RPC_HOST=https://explorer-api.devnet.solana.com
 ```
 ## upload resources and init candy machine or update candy machine
 ```
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts upload -e devnet -k ~/.config/solana/devnet.json -cp config.json ./assets
 ```
+verify candy machine
+```
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts verify_upload -e devnet -k ~/.config/solana/devnet.json
+```
+update candy machine
 ```
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet -k ~/.config/solana/devnet.json -cp config.json
 ```
